@@ -140,7 +140,7 @@ public class BluetoothManager {
 
 
     /**得到配对的设备列表,清除已配对的设备**/
-    public void removePairDevice(){
+    public void removePairDeviceList(){
         if(mBluetoothAdapter!=null){
             Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();
             for(BluetoothDevice device : bondedDevices ){
