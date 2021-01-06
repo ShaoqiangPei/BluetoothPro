@@ -5,9 +5,14 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.provider.Settings;
+import android.util.Log;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bluetoothlibrary.util.BluetoothLog;
+
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -47,6 +52,12 @@ public class BluetoothManager {
     public void requestStartBluetooth(int requestCode, Context context) {
         Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         ((AppCompatActivity)context).startActivityForResult(enableBtIntent, requestCode);
+    }
+
+    /**跳转蓝牙设置界面**/
+    public void goBluetoothSetting(Context context){
+        Intent intent=new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+        context.startActivity(intent);
     }
 
     /**强制打开蓝牙**/
@@ -125,6 +136,28 @@ public class BluetoothManager {
             }
         }
         return BluetoothManager.NO_BLUETOOTH_CODE;
+    }
+
+
+    /**得到配对的设备列表,清除已配对的设备**/
+    public void removePairDevice(){
+        if(mBluetoothAdapter!=null){
+            Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();
+            for(BluetoothDevice device : bondedDevices ){
+                unpairDevice(device);
+            }
+        }
+    }
+
+    //反射来调用BluetoothDevice.removeBond取消设备的配对
+    private void unpairDevice(BluetoothDevice device) {
+        try {
+            Method m = device.getClass()
+                    .getMethod("removeBond", (Class[]) null);
+            m.invoke(device, (Object[]) null);
+        } catch (Exception e) {
+            BluetoothLog.e("====unpairDevice==="+e.getMessage());
+        }
     }
 
 }

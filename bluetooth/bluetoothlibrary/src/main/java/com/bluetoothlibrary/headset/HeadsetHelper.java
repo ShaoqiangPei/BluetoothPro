@@ -201,6 +201,8 @@ public class HeadsetHelper {
         }
         //注销蓝牙链接
         mHeadsetManager.disableAdapter();
+        //断开蓝牙
+        mHeadsetManager.closeBluetooth();
     }
 
 }

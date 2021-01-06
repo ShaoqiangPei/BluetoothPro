@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bluetoothlibrary.headset.HeadsetHelper;
+import com.bluetoothlibrary.interfacer.OnBluetoothListener;
+import com.bluetoothlibrary.interfacer.OnBluetoothStartListener;
 import com.bluetoothlibrary.util.BluetoothLog;
 
 import java.util.List;
@@ -172,9 +174,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         mHeadsetHelper.destory();
-//        //=======酌情处理看是否要断开蓝牙
-//        //断开蓝牙
-//        mHeadsetHelper.getHeadsetManager().closeBluetooth();
         BluetoothLog.i("======destory=====");
         super.onDestroy();
     }
