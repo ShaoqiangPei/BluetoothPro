@@ -352,3 +352,11 @@ public class BluetoothActivity extends AppCompatActivity {
         //取消蓝牙耳机连接
         mHeadsetHelper.destory();
 ```
+#### 2.3 蓝牙显示连接上，但仍然没连上的处理
+一般出在已配对的蓝牙，然后在连接的时候，容易出现此现象。我们可以尝试用以下方法先清空已配对蓝牙列表：
+```
+                //得到配对的设备列表,清除已配对的设备
+                mHeadsetHelper.getHeadsetManager().removePairDeviceList();
+```
+然后再重新搜索蓝牙设备。
+
