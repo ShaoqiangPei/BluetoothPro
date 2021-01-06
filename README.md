@@ -2,6 +2,7 @@
 a library for bluetooth
 
 ## 简介
+[![](https://jitpack.io/v/ShaoqiangPei/BluetoothPro.svg)](https://jitpack.io/#ShaoqiangPei/BluetoothPro)  
 BluetoothPro 是一个专注蓝牙连接的工具库，目的是使涉及到蓝牙相关功能开发变得更加高效快速。
 
 ## 依赖
