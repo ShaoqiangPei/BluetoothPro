@@ -7,17 +7,13 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Build;
-
 import androidx.annotation.RequiresApi;
-
-import com.bluetoothlibrary.R;
 import com.bluetoothlibrary.base.BluetoothManager;
-import com.bluetoothlibrary.base.BluetoothReceiver;
-import com.bluetoothlibrary.base.OnBluetoothListener;
-import com.bluetoothlibrary.base.OnBluetoothStartListener;
+import com.bluetoothlibrary.receiver.BluetoothReceiver;
+import com.bluetoothlibrary.interfacer.OnBluetoothListener;
+import com.bluetoothlibrary.interfacer.OnBluetoothStartListener;
 import com.bluetoothlibrary.util.BluetoothLog;
 import com.bluetoothlibrary.util.StringUtil;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -205,8 +201,6 @@ public class HeadsetHelper {
         }
         //注销蓝牙链接
         mHeadsetManager.disableAdapter();
-        //断开蓝牙
-        mHeadsetManager.closeBluetooth();
     }
 
 }

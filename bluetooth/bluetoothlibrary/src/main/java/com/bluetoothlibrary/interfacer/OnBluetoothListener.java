@@ -1,4 +1,4 @@
-package com.bluetoothlibrary.base;
+package com.bluetoothlibrary.interfacer;
 
 import android.bluetooth.BluetoothDevice;
 

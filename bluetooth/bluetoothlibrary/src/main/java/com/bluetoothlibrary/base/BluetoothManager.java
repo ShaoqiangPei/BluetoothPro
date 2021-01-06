@@ -20,7 +20,7 @@ import java.util.Set;
  */
 public class BluetoothManager {
 
-    public static final int NO_BLUETOOTH_CODE=-1; //设备不支持蓝牙
+    public static final int NO_BLUETOOTH_CODE=-1; //无效值
     public static final int NO_SUPPORT=0x1; //设备不支持蓝牙
 
     protected BluetoothAdapter mBluetoothAdapter;
@@ -106,6 +106,25 @@ public class BluetoothManager {
         }else {
             BluetoothLog.e("====配对bluetoothDevice为null===");
         }
+    }
+
+    /***
+     * 判断新蓝牙是否存在于蓝牙列表中
+     *
+     * @param deviceList
+     * @param bluetoothDevice
+     * @return BluetoothManager.NO_BLUETOOTH_CODE:表示bluetoothDevice不存在于deviceList中
+     *         若存在则返回具体蓝牙设备下标
+     */
+    public int getAddressIndex(List<BluetoothDevice>deviceList,BluetoothDevice bluetoothDevice){
+        if(deviceList!=null&&!deviceList.isEmpty()&&bluetoothDevice!=null){
+            for(int i=0;i<deviceList.size();i++){
+                if(deviceList.get(i).getAddress().equals(bluetoothDevice.getAddress())){
+                    return i;
+                }
+            }
+        }
+        return BluetoothManager.NO_BLUETOOTH_CODE;
     }
 
 }
