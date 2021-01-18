@@ -32,4 +32,38 @@ public class StringUtil {
         return !isEmpty(input);
     }
 
+    /***
+     * 判断是否为数字(整数或小数)
+     *
+     * 一般用于判断输入框中要输入Double类型数据
+     * @param msg
+     * @return
+     */
+    public static boolean isDoubleFormat(String msg){
+        String regex="0|^[1-9][0-9]*$|^[1-9][0-9]*\\.[0-9]+$|0\\.[0-9]+$";
+        return isRegex(msg,regex);
+    }
+
+    /**字符串是否全为字母**/
+    public static boolean isAllLetter(String msg){
+        String regex="^[a-zA-Z]+$";
+        return isRegex(msg,regex);
+    }
+
+    /**
+     * 根据规则匹配字符串
+     *
+     * @param msg 字符串
+     * @param regex 设置的规则，如:"^[a-zA-Z0-9]+$"
+     * @return
+     */
+    public static boolean isRegex(String msg, String regex){
+        if(StringUtil.isEmpty(msg)){
+            return false;
+        }
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(msg);
+        return matcher.matches();
+    }
+
 }

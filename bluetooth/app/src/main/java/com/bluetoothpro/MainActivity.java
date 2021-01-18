@@ -11,12 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.bluetoothlibrary.headset.HeadsetHelper;
 import com.bluetoothlibrary.interfacer.OnBluetoothListener;
 import com.bluetoothlibrary.interfacer.OnBluetoothStartListener;
 import com.bluetoothlibrary.util.BluetoothLog;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

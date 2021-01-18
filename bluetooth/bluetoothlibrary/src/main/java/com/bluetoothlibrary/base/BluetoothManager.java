@@ -6,12 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
-import android.util.Log;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bluetoothlibrary.util.BluetoothLog;
-
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +24,10 @@ public class BluetoothManager {
 
     public static final int NO_BLUETOOTH_CODE=-1; //无效值
     public static final int NO_SUPPORT=0x1; //设备不支持蓝牙
+    public static final int SCALE_CONNECT_FAILED=0x2; //蓝牙电子秤连接失败
+    public static final int SCALE_CONNECT_SUCCESS=0x3; //蓝牙电子秤连接成功
+
+    public static final String UTF_8="utf-8"; //utf-8字符集
 
     protected BluetoothAdapter mBluetoothAdapter;
 
