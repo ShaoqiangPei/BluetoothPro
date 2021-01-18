@@ -32,5 +32,5 @@ BluetoothPro 是一个专注蓝牙连接的工具库，目的是使涉及到蓝�
 ```
 ### 二. 蓝牙操作类
 [HeadsetHelper](https://github.com/ShaoqiangPei/BluetoothPro/blob/master/read/HeadsetHelper%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md) ———— 蓝牙耳机连接帮助类  
-[BluetoothScaleManager](https://github.com/ShaoqiangPei/BluetoothPro/blob/master/read/BluetoothScaleManager%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md) ———— 蓝牙电子秤管理类类
+[BluetoothScaleManager](https://github.com/ShaoqiangPei/BluetoothPro/blob/master/read/BluetoothScaleManager%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md) ———— 蓝牙电子秤管理类
 
