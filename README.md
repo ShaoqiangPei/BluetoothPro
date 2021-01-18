@@ -23,3 +23,12 @@ BluetoothPro 是一个专注蓝牙连接的工具库，目的是使涉及到蓝�
 ```
 
 ## 使用说明
+### 一. 调试
+本库的`debug`调试如下：
+```
+//调试的 tag = Bluetooth   true:开启调试模式  false：关闭调试模式  默认调试为关闭模式
+        //设置蓝牙打印调试(开启)
+        BluetoothLog.setDebug(true);
+```
+### 二. 蓝牙操作类
+[HeadsetHelper](https://github.com/ShaoqiangPei/BluetoothPro/blob/master/read/HeadsetHelper%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md) ———— 蓝牙耳机连接帮助类
