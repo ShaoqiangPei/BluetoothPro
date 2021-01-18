@@ -290,29 +290,7 @@ public class BluetoothActivity extends AppCompatActivity {
 }
 ```
 #### 2.2 跳转到系统蓝牙界面进行蓝牙搜索和配对
-用此种方法的话，就不需要注册蓝牙相关监听了，也就是不需要
-```
-        //注册蓝牙监听
-        mHeadsetHelper.registerReceiver();
-```
-及与其相关的
-```
-        //监听蓝牙耳机连接状态
-        mHeadsetHelper.setOnReceiver
-```
-方法，搜索跳转到系统的蓝牙界面时，操作如下：
-```
-        //搜索
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //跳转到系统蓝牙界面
-                mHeadsetHelper.getHeadsetManager().goBluetoothSetting(BluetoothActivity.this);             
-            }
-        });
-```
-由于不用询问蓝牙打开的问题，所以与之相关的`onActivityResult`也不必处理了。大大简化了蓝牙搜索及展示的处理。我们需要的处理代码只需以下几样：  
-在进入界面时：
+用此种方法的话，就不需要注册蓝牙广播相关监听了，也不需要处理`onActivityResult`,我们只需要在进入界面时：
 ```
         //获取蓝牙相关
         mHeadsetHelper=new HeadsetHelper(BluetoothActivity.this);
